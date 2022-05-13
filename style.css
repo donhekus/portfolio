@@ -1,0 +1,241 @@
+/* ──────────────────────────────────────────────────────────────┐
+│  Egon Stefán CV                                                │
+└────────────────────────────────────────────────────────────── */
+
+/* Reset
+   ------------------------------------------------------------ */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+
+
+/* Variables
+   ------------------------------------------------------------ */
+
+:root {
+	--bg: #232525;
+	--text: #bababa;
+	--text-light: #cecece;
+	--green: #629755;
+	--orange: #cb772f;
+	--blue: #6897bb;
+}
+
+
+
+/* Base Components
+   ------------------------------------------------------------ */
+
+::selection {
+	color: var(--text-light);
+	background-color: var(--green);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html { scroll-behavior: initial; }
+}
+
+body {
+	max-width: 700px;
+	margin: 50px auto;
+	padding: 0 40px;
+	font-family: 'Source Code Pro', monospace;
+	font-size: 20px;
+	color: var(--text);
+	letter-spacing: -.5px;
+	line-height: 1.5;
+	background-color: var(--bg);
+}
+
+@supports (display: grid) {
+	body {
+		max-width: 1140px;
+	}
+}
+
+main {
+	margin-top: 65px;
+}
+
+
+
+/* Typography
+   ------------------------------------------------------------ */
+
+h1 {
+	font-size: 60px;
+	font-weight: 700;
+	color: var(--text-light);
+	letter-spacing: -3px;
+	line-height: 1;
+}
+
+h2 {
+	margin-bottom: 20px;
+	font-size: 26px;
+	font-weight: 700;
+	color: var(--green);
+	letter-spacing: -1px;
+	line-height: 1;
+}
+
+h2:before { content: '// '; }
+
+h3 {
+	display: inline;
+	font-size: 24px;
+	font-weight: 700;
+	color: var(--blue);
+}
+
+a {
+	color: var(--text);
+	text-decoration: none;
+	border-bottom: 1px solid var(--text);
+	transition: color .3s, border-color .2s;
+}
+
+a:hover,
+a:focus {
+	color: var(--green);
+	border-color: var(--text-light);
+}
+
+abbr {
+	text-decoration: none;
+	border-bottom: 1px dashed var(--text);
+}
+
+@supports (display: grid) {
+	li {
+		display: inline;
+	}
+	li:not(:last-of-type):after {
+		content: ',';
+		margin-right: 3px;
+	}
+}
+
+
+
+/* Design Elements
+   ------------------------------------------------------------ */
+
+.grid {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-gap: 50px 100px;
+}
+
+.site-description {
+	margin-top: 8px;
+	font-size: 24px;
+	color: var(--orange);
+}
+
+.contact {
+	margin: 40px 0 65px;
+}
+
+.contact dd {
+	margin-bottom: 20px;
+}
+
+@supports (display: grid) {
+	.contact {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-gap: 10px 15px;
+		margin: 0;
+	}
+	.contact dt:after { content: ''; }
+	.contact dd { margin-bottom: 0; }
+}
+
+section {
+	margin-bottom: 65px;
+}
+
+article {
+	margin-bottom: 20px;
+}
+
+.skill p, .company p {
+	margin-bottom: 15px;
+}
+
+.company header {
+	margin-bottom: 10px;
+}
+
+
+
+/* Media Queries
+   ------------------------------------------------------------ */
+
+@media only screen and (max-width: 992px) {
+	.grid {
+		display: block;
+	}
+	.contact {
+		margin-top: 30px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	body {
+		margin: 25px auto;
+		padding: 0 25px;
+		font-size: 18px;
+		letter-spacing: -.25px;
+	}
+	main {
+		margin-top: 50px;
+	}
+	section {
+		margin-bottom: 50px;
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	body {
+		padding: 0 15px;
+		font-size: 16px;
+	}
+	.contact {
+		grid-gap: 6px 12px;
+	}
+	section {
+		margin-bottom: 40px;
+	}
+	article {
+		margin-bottom: 15px;
+	}
+	h1 {
+		font-size: 50px;
+		letter-spacing: -1.5px;
+	}
+	h2 {
+		margin-bottom: 15px;
+		font-size: 24px;
+	}
+	h3 {
+		font-size: 20px;
+	}
+	.site-description {
+		font-size: 18px;
+		line-height: 1.25;
+	}
+}
